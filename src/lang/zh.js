@@ -18,7 +18,13 @@ export default {
     logIn: '立即登录',
     username: '账号',
     password: '密码',
-    code: '验证码'
+    code: '验证码',
+    ortherLoginType: '其他登录方式',
+    chooseToSignIn: '选择以下账号登录：',
+    type: {
+      up: '账号密码登录',
+      social: '第三方账号登录'
+    }
   },
   documentation: {
     documentation: '项目文档',
@@ -40,7 +46,8 @@ export default {
       desc: '个人描述',
       oldPassword: '旧密码',
       newPassword: '新密码',
-      confirmPassword: '再次确认'
+      confirmPassword: '再次确认',
+      social: '第三方账号'
     },
     role: {
       roleName: '角色名称',
@@ -172,26 +179,33 @@ export default {
     confirmRestPassword: '确定重置所选用户密码？',
     resetPasswordSuccess: '所选用户密码重置已被重置为1234qwer',
     getCodeImageFailed: '获取图形验证码失败',
-    tooManyRequest: '获取验证码过于频繁，请1分钟后再试'
+    tooManyRequest: '获取验证码过于频繁，请1分钟后再试',
+    clientOriginSecret: '该客户端原始密码为：'
   },
   rules: {
     require: '不能为空',
+    range2to10: '长度在 2 到 10 个字符',
     range3to10: '长度在 3 到 10 个字符',
+    range3to20: '长度在 3 到 20 个字符',
     range4to10: '长度在 4 到 10 个字符',
-    range6to20: '长度在 6 到 10 个字符',
+    range6to20: '长度在 6 到 20 个字符',
     email: '请输入正确的邮箱地址',
     mobile: '请输入合法的手机号',
     usernameExist: '该用户名已存在',
+    clientIdExist: '该Client ID已存在',
     roleNameExist: '该角色名称已存在',
     noMoreThan10: '长度不能超过10个字符',
+    noMoreThan11: '长度不能超过11个字符',
     noMoreThan20: '长度不能超过20个字符',
     noMoreThan50: '长度不能超过50个字符',
-    noMoreThan100: '长度不能超过100个字符'
+    noMoreThan100: '长度不能超过100个字符',
+    invalidInteger: '请输入大于零的整数',
+    invalidURL: '不是有效的URL'
   },
   common: {
     system: '分布式微服务权限系统',
     desc: {
-      a: '基于Spring Boot 2.1.6 & Spring Cloud Greenwich.SR1',
+      a: '基于Spring Boot 2.1.8 & Spring Cloud Greenwich.SR3',
       b: '使用Spring Cloud OAuth2统一认证',
       c: '认证服务器资源服务器分离，方便拓展',
       d: '前后端分离架构，提高软件开发效率',
@@ -261,6 +275,16 @@ export default {
     al: '阿里系',
     lm: '脸萌',
     ctc: '点击选择',
-    pleaseInputUrl: '请输入URL'
+    pleaseInputUrl: '请输入URL',
+    bind: '绑定',
+    unbind: '解绑',
+    confirmUnbind: '确定解绑该第三方账号？',
+    unbindSuccess: '解绑成功',
+    bindSuccess: '绑定成功',
+    bindLogin: '绑定并登录',
+    signLogin: '注册并登录',
+    current: '当前',
+    socialAccount: '账号',
+    socialTips: '尚未绑定任何系统账户，您可以绑定系统账户或者注册一个新的账户并绑定。'
   }
 }
