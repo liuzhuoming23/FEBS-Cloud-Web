@@ -66,6 +66,7 @@ export default {
   data() {
     return {
       dialogVisible: false,
+      socialLoginUrl: socialLoginUrl,
       logo: [
         { img: 'gitee.png', name: 'gitee', bind: false, radius: true },
         { img: 'github.png', name: 'github', bind: false, radius: true },
@@ -119,7 +120,7 @@ export default {
     },
     bind(name) {
       this.oauthType = name
-      const url = `${socialLoginUrl}/${name}/bind`
+      const url = `${this.socialLoginUrl}/${name}/bind`
       window.open(url, 'newWindow', `height=${this.page.height}, width=${this.page.width}, top=10%, left=10%, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no`)
       window.addEventListener('message', this.resolveBindResult, false)
     },
