@@ -9,6 +9,8 @@
       <div class="desc">4. {{ $t('common.desc.d') }}</div>
       <div class="desc">5. {{ $t('common.desc.e') }}</div>
       <div class="desc">6. {{ $t('common.desc.f') }}</div>
+      <div class="desc">7. {{ $t('common.desc.g') }}</div>
+      <div class="desc">8. {{ $t('common.desc.h') }}</div>
     </div>
     <el-form ref="loginForm" :model="loginForm" :rules="rules" class="login-form" autocomplete="off" label-position="left">
       <div class="title-container">
@@ -273,7 +275,7 @@ export default {
       } else if (data.message === 'social_login_success') {
         that.saveLoginData(data.data)
         that.getUserDetailInfo()
-        that.loginSuccessCallback(data.username)
+        that.loginSuccessCallback()
       } else {
         // do nothing
       }
@@ -296,7 +298,7 @@ export default {
           const data = r.data.data
           this.saveLoginData(data)
           this.getUserDetailInfo()
-          this.loginSuccessCallback(that.loginForm.bindUsername)
+          this.loginSuccessCallback()
         }).catch((error) => {
           console.error(error)
           that.loading = false
@@ -321,7 +323,7 @@ export default {
           const data = r.data.data
           this.saveLoginData(data)
           this.getUserDetailInfo()
-          this.loginSuccessCallback(that.loginForm.signUsername)
+          this.loginSuccessCallback()
         }).catch((error) => {
           console.error(error)
           that.loading = false
@@ -345,7 +347,7 @@ export default {
           const data = r.data
           this.saveLoginData(data)
           this.getUserDetailInfo()
-          this.loginSuccessCallback(that.loginForm.username)
+          this.loginSuccessCallback()
         }).catch((error) => {
           console.error(error)
           that.loading = false
@@ -378,8 +380,8 @@ export default {
         this.loading = false
       })
     },
-    loginSuccessCallback(username) {
-      this.$get(`system/user/success/${username}`).catch((e) => { console.log(e) })
+    loginSuccessCallback() {
+      this.$get('system/user/success/').catch((e) => { console.log(e) })
     }
   }
 }
